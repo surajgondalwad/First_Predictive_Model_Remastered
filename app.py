@@ -113,18 +113,17 @@ st.markdown("---")
 if model_loaded:
     if st.button("🔮 Predict Impact"):
 
-        # Create DataFrame (important fix)
-       features = pd.DataFrame([{
-                "Age": age,
-                "Gender": mappings["gender"][gender],
-                "Education_Level": mappings["education"][education_level],
-                "City": mappings["city"][city],
-                "AI_Tool_Used": mappings["ai_tool"][ai_tool],
-                "Daily_Usage_Hours": daily_hours,
-                "Purpose": mappings["purpose"][purpose]
-            }])
+        # FIXED INDENTATION HERE ✅
+        features = pd.DataFrame([{
+            "Age": age,
+            "Gender": mappings["gender"][gender],
+            "Education_Level": mappings["education"][education_level],
+            "City": mappings["city"][city],
+            "AI_Tool_Used": mappings["ai_tool"][ai_tool],
+            "Daily_Usage_Hours": daily_hours,
+            "Purpose": mappings["purpose"][purpose]
+        }])
 
-        # Label mapping fix
         label_map = {0: "Low", 1: "Medium", 2: "High"}
 
         with st.spinner("Analyzing data..."):
@@ -133,21 +132,20 @@ if model_loaded:
             try:
                 prediction = model.predict(features)
 
-                # Handle numeric OR string output
                 raw_output = prediction[0]
                 predicted_class = label_map.get(raw_output, raw_output)
 
                 st.markdown("### 🎯 Prediction Result")
 
                 if predicted_class == "High":
-                    st.success(f"✅ **High Impact** – AI usage is highly beneficial!")
+                    st.success("✅ **High Impact** – AI usage is highly beneficial!")
                     st.balloons()
 
                 elif predicted_class == "Medium":
-                    st.info(f"ℹ️ **Medium Impact** – Balanced usage.")
+                    st.info("ℹ️ **Medium Impact** – Balanced usage.")
 
                 else:
-                    st.warning(f"⚠️ **Low Impact** – Try improving usage strategy.")
+                    st.warning("⚠️ **Low Impact** – Try improving usage strategy.")
 
             except Exception as e:
                 st.error(f"❌ Prediction error → {e}")
