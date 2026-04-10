@@ -48,7 +48,7 @@ def load_lottieurl(url: str):
 @st.cache_resource
 def load_model():
     try:
-        model_path = os.path.join(os.path.dirname(__file__), "model_1.pkl")
+        model_path = os.path.join(os.path.dirname(__file__), "model_2.pkl")
         with open(model_path, 'rb') as file:
             return pickle.load(file)
     except Exception as e:
