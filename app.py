@@ -115,14 +115,14 @@ if model_loaded:
 
         # Create DataFrame (important fix)
        features = pd.DataFrame([{
-    "Age": age,
-    "Gender": mappings["gender"][gender],
-    "Education_Level": mappings["education"][education_level],
-    "City": mappings["city"][city],
-    "AI_Tool_Used": mappings["ai_tool"][ai_tool],
-    "Daily_Usage_Hours": daily_hours,
-    "Purpose": mappings["purpose"][purpose]
-}])
+                "Age": age,
+                "Gender": mappings["gender"][gender],
+                "Education_Level": mappings["education"][education_level],
+                "City": mappings["city"][city],
+                "AI_Tool_Used": mappings["ai_tool"][ai_tool],
+                "Daily_Usage_Hours": daily_hours,
+                "Purpose": mappings["purpose"][purpose]
+            }])
 
         # Label mapping fix
         label_map = {0: "Low", 1: "Medium", 2: "High"}
