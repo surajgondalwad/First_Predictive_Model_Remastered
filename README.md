@@ -16,7 +16,7 @@ Using **XGBoost**, the pipeline achieves high predictive accuracy while maintain
 
 * **Data Preprocessing & Feature Engineering:** Cleaned raw survey/log data, handled missing values, encoded categorical variables, and engineered interaction terms representing usage density.
 * **Exploratory Data Analysis (EDA):** Visualized distribution trends, correlation matrices, and grade shifts across different academic disciplines.
-* **Model Training & Optimization:** Implemented `XGBoostRegressor` (or `XGBoostClassifier`) alongside baseline models (Linear Regression, Decision Trees, Random Forest). Tuned hyperparameters using `GridSearchCV`.
+* **Model Training & Optimization:** Implemented `XGBoostClassifier` alongside baseline models (Linear Regression, Decision Trees, Random Forest). Tuned hyperparameters using `GridSearchCV`.
 * **Model Explainability (SHAP):** Leveraged **SHAP (SHapley Additive exPlanations)** to break open the "black box" and rank feature importance for actionable insights.
 
 ---
